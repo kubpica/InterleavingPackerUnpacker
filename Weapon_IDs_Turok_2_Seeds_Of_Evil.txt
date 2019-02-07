@@ -1,0 +1,37 @@
+This File Contains all of the Weapon IDs (Inside in the SubBlock Folders) from Turok 2: Seeds of Evil's Original PC Version. This File is from the Seeds of Evil.lss Data.
+
+subBlock2394: Bore (SP Version)
+subBlock2395: Charge Dart Rifle (SP Version)
+subBlock2396: Firestorm Cannon (SP Version)
+subBlock2397: Flame Thrower
+subBlock2398: Flare Gun
+subBlock2399: Grenade Launcher (SP Version)
+subBlock2400: Magnum Pistol/Mag 60
+subBlock2401: Bore (MP Version, Unused)
+subBlock2402: Charge Dart Rifle (MP Version, Unused)
+subBlock2403: Crossbow (Unused)
+subBlock2404: Firestorm Cannon (MP Version, Unused)
+subBlock2405: Grenade Launcher (MP Version, Unused)
+subBlock2406: Plasma Rifle (MP Version, Unused)
+subBlock2407: Claws (Unused in SP)
+subBlock2408: Rocket Launcher (Unused)
+subBlock2409: Assault Rifle (Unused)
+subBlock2410: Harpoon Gun (MP Version, Unused)
+subBlock2411: Underwater Rockets (MP Version, Unused)
+subBlock2412: Bow
+subBlock2413: Nuke
+subBlock2414: PFM Layer
+subBlock2415: Pistol
+subBlock2416: Plasma Rifle (SP Version)
+subBlock2417: Riding Gun (You can't use any of it's Guns while holding It as a Normal Weapon, Making it Useless)
+subBlock2418: Scoprion Launcher
+subBlock2419: Shotgun
+subBlock2420: Shredder
+subBlock2421: Sunfire Pods
+subBlock2422: Razor Wind
+subBlock2423: Talon
+subBlock2424: Tek Bow
+subBlock2425: Tranq Gun
+subBlock2426: Harpoon Gun (SP Version)
+subBlock2427: Underwater Rockets (SP Version)
+subBlock2428: War Blade
