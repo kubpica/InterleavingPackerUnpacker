@@ -1,0 +1,59 @@
+sb0 -> models? (crashes game when replaced with arena.lsm things)
+sb1 -> actor attributes? (crashes game when replaced...)
+sb2 -> actor types? (crashes...)
+sb3 -> textures? (crashes...)
+sb4 -> particles!
+sb5,sb6,sb7 -> levels! (sound shaders? event table?)
+sb8 -> warp IDs? / spawn-points!
+sb9,sb10 -> ? (empty in .lsm and .lss)
+sb11 -> weapon effects (same in every .lsm, smaller in .lss)
+sb12 -> ? (same in .lsm, 16bytes longer in .lss)
+sb13 -> ? (same in .lsm, 24bytes longer in .lss)
+sb14 -> ? (same in .lsm, 8bytes longer in .lss)
+sb15 -> ? (same in .lsm, 8bytes longer in .lss)
+sb16 -> gui textures! 
+sb17 -> defines sth for gui textures (ids? offsets?)
+sb18 -> ? (lector sounds/issues? cos big in ctf and arena and in .lss, but small in rok?)
+sb19 -> ?
+sb20 -> ? (empty in .lsm and .lss)
+ 
+rok->5->17 = graveryard
+rok->5->17->6 = fog on the floor/ground of graveryard
+rok->5->17->3 = positions of pickables and some walls
+
+structure of level data:
+every level data starts with: 09 00 00 00 30 00 00 00 48 00 00 00
+words between: ??? //unknown - probly just data of level
+every level data ends with: *name of level*
+
+demo.lsm/harbor-1 facts:
+1. 1 map (harbor-1)
+2. 2 teleports (1 pair) 
+3. 8 weapons
+4. 17 ammo spots
+5. 26 hp spots (5 grey, 21 blue)
+6. 5 working ladders
+7. 8 fires (4 campfires 4 torches)
+8. 3 birds
+9. 2 lighthouses (2 moving lights)
+10. 2 water tanks (1 deep that you can dive, 1 shallow)
+11. 16 spawn points
+
+harbor-1 spawnpoints:
+[zwrot postaci po zespanwnowaniu - na czym celownik: zak³adam ¿e gdy patrzysz znad wody na budynek, na dziurê w œcianie (bez drabiny) to jest 0 stopni]
+1. w p³ytkiej wodzie obok drabiny do teleportu (po prawej stronie patrz¹c w stronê drabin) [w stone teleportu: 90]
+2. lewej molo obok podestu [zwrot w kierunku przeciwnego molo, prostopadle: 90]
+3. w prawym górnym rogu na przeciw teleportu [na teleport: 180]
+4. prawe molo obok podestu [270]
+5. w p³ytkiej wodzie po lewej stronie teleportu patrz¹c na drabiny (zaraz obok shotguna - jak podskoczysz to go zbierzesz) [na drabine: 180]
+6. zaraz za 3 metalowymi skrzynkami (u³o¿onymi od najmniejszej do najwiêkszej) [na skrzynie: 90]
+7. obok zamkniêtego (obudowanego/wewn¹trz) teleportu (przed nim patrz¹c na drabiny) [celownik zaraz obok rogu: 110]
+8. w ognisku w którym s¹ 2 plazma ammo (obok wybuchaj¹cej skrzynki, po prawej stronie podestu do zamkniêtych drzwi) [plecami do zamkniêtej bramy: 90]
+9. w teleporcie tym co jest na zawn¹trz [po skosie, w strone podestu do zamkniêtych drzwi 315]
+10. zaraz obok dziury w œcianie w której s¹ 2 niebieskie hp i 2 paczki ammo do plazmy [180]
+11. na œrodku mapy, nad wod¹ pomiêdzy pochodniami zaraz jakbyœ mia³ do niej skoczyæ [na pod³u¿n¹ skrzynie, na której jest tekbow: 270]
+12. zaraz obok zamkniêtych drzwi, obok ogniska [plecami do zamkniêtej bramy: 90]
+13. w korytarzu (gdzie jest 1 box na którym s¹ 2 rakiety i 2 niebieskie hp) w rogu pomiêdzy drabin¹, a rur¹ [celownik pomiêdzy boxem, a lewym niebieskim hp: 115]
+14. po lewej stronie podestu do zamkniêtych drzwi (symetryczni do numeru 8) [90]
+15. w rurze obok firestorm cannon (pomiêdzy nim, a 1 ammo do plazmy) [w strone firestorma: 180]
+16. na lewym molo przy zejœciu do wody (naprzeciwko teleportu) [na teleport: 90]
