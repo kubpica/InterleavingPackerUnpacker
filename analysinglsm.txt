@@ -21,6 +21,38 @@ rok->5->17 = graveryard
 rok->5->17->6 = fog on the floor/ground of graveryard
 rok->5->17->3 = positions of pickables and some walls
 
+rok->5->0->3 = picables, gates and bridges, barrels (generally positions of models?)
+rok->5->0->1 = ground hitboxes?
+
+rok->5->9 = Harbour5 
+rok->5->9->5->9->1 = small ladder (ma³a drabinka boczna do tulenu prowadzacego na dach (na singlu ta brama jest zamknieta i nie pamietam jak ja otworzyc, w multi otwarta))
+rok->5->9->5->14->1 = House with the rocket launcher (scorpion) on the roof
+rok->5->9->5->15->3 = skrzynka jak sie idzie na d³ug¹ po plazme (ko³o teleportu do gredanelaunchera)??? (chyba jednak nie?)
+rok->5->9->5->20->3 = ?
+rok->5->9->5->21->3 = ?
+rok->5->9->5->22->1 = Okolice drugiej plazmy
+rok->5->9->5->27->1 = po lewej stronnie fontanny - przejœcie z d³ugiej nad fontanne
+
+rok->5->9->5->14->1 // House with the rocket launcher (scorpion) on the roof
+	1 segment: the right-down
+		1 word: ?? (jak da³em bajty na 00 to znik³o, jak na FF to wygl¹da nie zmienione)
+		2,3,4 word: size (float)  
+		5 word: x position (float)
+		6 word: y position (float)
+		7 word: z position (float)
+		8 word: ? (jak ustawi³em na 100 (float) to znika³o krzes³o jak siê patrzy³o na nie pod ukosem)
+		9 word: ?
+		10 word: ?
+		11 word: first 2 bytes determine displayed model (EA 00 B3 01 = closed book) (krzes³a ró¿ni¹ sie o 262144 dec)
+		12 word: ?
+		13 word: y-axis rotation
+	2 segment: right-top chair
+
+00 02 00 00  CE 1C 6F 3E  CE 1C 6F 3E  CE 1C 6F 3E  66 66 3E 45  00 00 00 00  66 66 66 C5  BC C1 DA 3D  BB C1 A1 41  31 42 A2 41  11 00 CF 01  05 00 00 00  CF 00 75 00
+00 00 04 00  CE 1C 6F 3E  CE 1C 6F 3E  CE 1C 6F 3E  CD CC 44 45  00 00 00 00  66 66 66 C5  A2 C1 DA 3D  BC C1 BB 41  31 42 A1 41  11 00 CB 01  05 00 00 00  75 00 CF 00
+00 00 04 00  CE 1C 6F 3E  CE 1C 6F 3E  CE 1C 6F 3E  CD CC 44 45  00 00 00 00  00 00 60 C5  A1 C1 DA 3D  A2 C1 BC 41  31 42 BB 41  11 00 98 01  05 00 00 00  75 00 31 00
+00 02 00 00  CE 1C 6F 3E  CE 1C 6F 3E  CE 1C 6F 3E  66 66 3E 45  00 00 00 00  00 00 60 C5  BB C1 DA 3D  A1 C1 A2 41  31 42 BC 41  11 00 D3 01  05 00 00 00  31 00 75 00
+
 structure of level data:
 every level data starts with: 09 00 00 00 30 00 00 00 48 00 00 00
 words between: ??? //unknown - probly just data of level
