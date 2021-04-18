@@ -119,6 +119,8 @@ struct MyStreamingHelper
 };
 
 bool verbose = false;
+long segmentStyleTrue;
+long segmentStyleFalse;
 
 template <typename T>
 MyStreamingHelper& operator<<(MyStreamingHelper& h, T const& t)
@@ -191,13 +193,23 @@ void pushInt(std::vector<unsigned char>* bytes, unsigned int value, int offset =
 }
 
 bool isSegmentStyle(std::vector<unsigned char>* source, int blockSize, int offset = 0){ //isInterleaved(??)
-    if(blockSize<=8)
+    if(blockSize<=16){
+        segmentStyleFalse++;
         return false;
+    }
     int segmentLength = bytesToInt(source, offset);
     int segmentsAmount = bytesToInt(source, offset+4);
 
-    if(blockSize-(blockSize%8)==segmentLength*segmentsAmount+8)
+    int totalLength = segmentLength*segmentsAmount+8;
+    if(totalLength %8 == 4)
+        totalLength += 4;
+
+    if(blockSize-(blockSize%8)==totalLength){
+        segmentStyleTrue++;
         return true;
+    }
+
+    segmentStyleFalse++;
     return false;
 }
 
@@ -205,7 +217,12 @@ void encodeData(std::vector<unsigned char>* source, std::vector<unsigned char>* 
 {
     int segmentLength = bytesToInt(source, 0); //value of the first word
     int segmentsAmount = bytesToInt(source, 4); //value of second word
-    (*destination).resize(segmentLength*segmentsAmount+8);
+
+    int totalLength = segmentLength*segmentsAmount+8;
+    if(totalLength %8 == 4)
+        totalLength += 4;
+
+    (*destination).resize(totalLength);
     pushInt(destination,segmentLength,0);
     pushInt(destination,segmentsAmount,4);
 
@@ -226,7 +243,11 @@ void decodeData(std::vector<unsigned char>* source, std::vector<unsigned char>* 
     int segmentsAmount = bytesToInt(source, offset+4); //value of second word
 
     //cout << "segmentLength: " << segmentLength << " segmentsAmout: " << segmentsAmount << endl;
-    (*destination).resize(segmentLength*segmentsAmount+8);
+    int totalLength = segmentLength*segmentsAmount+8;
+    if(totalLength %8 == 4)
+        totalLength += 4;
+
+    (*destination).resize(totalLength);
 
     pushInt(destination,segmentLength,0);
     pushInt(destination,segmentsAmount,4);
@@ -501,6 +522,8 @@ int main()
         writeBytes(fileName.c_str(),&bytesToWrite);
         cout << "Packing finished." << endl;
     }
+
+    cout << "isSegmentStyle results: True: " << segmentStyleTrue << " False: " << segmentStyleFalse << endl;
 
     int t = 0; cin >> t;
     return 0;
