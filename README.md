@@ -9,7 +9,7 @@ I also managed to change position, size, rotation and even models of some parts 
 Check out the screenshots folder to learn more.
 
 Structure of the Turok2 .lsm files:
-`
+```
 sb0 -> models
 sb1 -> actor attributes?
 sb2 -> actor types?
@@ -61,4 +61,4 @@ rok->5->9->5->14->1 // House with the rocket launcher (scorpion) on the roof
 		12 word: ?
 		13 word: y-axis rotation
 	2 segment: right-top chair
-  `
+```
