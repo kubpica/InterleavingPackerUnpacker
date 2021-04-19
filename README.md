@@ -68,5 +68,8 @@ I noticed that some files are additionally compressed with RNC2 ([RNC format](ht
 
 For example I decompressed this file which I guess is a texture:
 ![alt Compressed](https://cdn.discordapp.com/attachments/272226370158067713/833636951369711617/rnc_compressed.png)
+
 into this:
 ![alt Decompressed](https://cdn.discordapp.com/attachments/272226370158067713/833636989102063666/rnc_decompressed.png)
+
+So if it is the bloodblobs texture my intuition says there should be some RGB encoded but I can't see it ;p Can you help?
