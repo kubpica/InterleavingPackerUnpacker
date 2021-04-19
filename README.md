@@ -63,3 +63,10 @@ rok->5->9->5->14->1 // House with the rocket launcher (scorpion) on the roof
 		13 word: y-axis rotation
 	2 segment: right-top chair
 ```
+
+I noticed that some files are additionally compressed with RNC2 ([RNC format](https://segaretro.org/Rob_Northen_compression "Rob Northen compression")) - those files start with RNC 0x02 (52 4E 43 02). You can use decompressors like https://github.com/lab313ru/rnc_propack_source or https://github.com/temisu/ancient BUT Turok's RNC uses little endian for header values (Uncompressed Size, Compressed Size, Uncompressed CRC, Compressed CRC) and the decompressors use big endian so you have to either swap the bytes of these values in order or edit the source code of these programs to treat these values as little endian.
+
+For example I decompressed this file which I guess is a texture:
+![alt Compressed](https://cdn.discordapp.com/attachments/272226370158067713/833636951369711617/rnc_compressed.png)
+into this:
+![alt Decompressed](https://cdn.discordapp.com/attachments/272226370158067713/833636989102063666/rnc_decompressed.png)
