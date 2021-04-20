@@ -62,7 +62,12 @@ void encodeData(std::vector<unsigned char>* source, std::vector<unsigned char>* 
 {
     int segmentLength = bytesToInt(source, 0); //value of the first word
     int segmentsAmount = bytesToInt(source, 4); //value of second word
-    (*destination).resize(segmentLength*segmentsAmount+8);
+
+    int totalLength = segmentLength*segmentsAmount+8;
+    if(totalLength %8 == 4)
+        totalLength += 4;
+
+    (*destination).resize(totalLength);
     pushInt(destination,segmentLength,0);
     pushInt(destination,segmentsAmount,4);
 
@@ -83,7 +88,11 @@ void decodeData(std::vector<unsigned char>* source, std::vector<unsigned char>* 
     int segmentsAmount = bytesToInt(source, 4); //value of second word
 
     cout << "segmentLength: " << segmentLength << " segmentsAmout: " << segmentsAmount << endl;
-    (*destination).resize(segmentLength*segmentsAmount+8);
+    int totalLength = segmentLength*segmentsAmount+8;
+    if(totalLength %8 == 4)
+        totalLength += 4;
+
+    (*destination).resize(totalLength);
 
     pushInt(destination,segmentLength,0);
     pushInt(destination,segmentsAmount,4);
